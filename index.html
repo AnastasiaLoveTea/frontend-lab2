@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ЛР2 — Таблиці та CSS-трансформації (варіант 10)</title>
+
+    <style>
+        .task1-table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 720px;
+            margin: 24px auto;
+            font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            text-align: center;
+        }
+        .task1-table td {
+            border: 2px solid #333;
+            padding: 12px 10px;
+            transition: background-color .2s ease, color .2s ease;
+        }
+
+        .task1-table tr:first-child td {
+            background-color: #108f8f;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .task1-table tr:nth-child(2) td {
+            background-color: #f5f510;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        .task1-table tr:first-child:hover td {
+            background-color: #f5f510;
+            color: #000000;
+        }
+        .task1-table tr:nth-child(2):hover td {
+            background-color: #108f8f;
+            color: #ffffff;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto 64px;
+            padding: 0 16px;
+        }
+        .h {
+            text-align: center;
+            margin: 40px 0 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+    </style>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="wrap">
+    <!-- ЗАВДАННЯ 1: таблиця -->
+    <div class="h">Завдання 1 — Таблиця (варіант 10)</div>
+    <table class="task1-table t-variant-10">
+        <tr>
+            <td class="r1">Іванова</td>
+            <td class="r1">Анастасія</td>
+            <td class="r1" rowspan="2">Лабораторна робота 2</td>
+            <td class="r1">Юріївна</td>
+            <td class="r1" rowspan="2">Варіант 10</td>
+        </tr>
+
+        <tr>
+            <td class="r2" colspan="2">ІА-32</td>
+            <td class="r2">Додаткова інформація</td>
+        </tr>
+
+        <tr>
+            <td class="r3" colspan="2"></td>
+            <td class="r3" colspan="3">Додатковий рядок</td>
+        </tr>
+    </table>
+
+    <h3 class="h">Завдання 2.1 — шестерня через position</h3>
+    <div class="stage">
+        <div class="gear-pos">
+            <div class="core"></div>
+            <span class="bolt b1"></span>
+            <span class="bolt b2"></span>
+            <span class="bolt b3"></span>
+            <span class="bolt b4"></span>
+            <span class="bolt b5"></span>
+            <span class="bolt b6"></span>
+            <span class="bolt b7"></span>
+            <span class="bolt b8"></span>
+            <span class="hole"></span>
+        </div>
+    </div>
+
+    <h3 class="h">Завдання 2.2 — шестерня через transform</h3>
+    <div class="stage">
+        <div class="gear-trf">
+            <div class="core"></div>
+            <span class="bolt b1"></span>
+            <span class="bolt b2"></span>
+            <span class="bolt b3"></span>
+            <span class="bolt b4"></span>
+            <span class="bolt b5"></span>
+            <span class="bolt b6"></span>
+            <span class="bolt b7"></span>
+            <span class="bolt b8"></span>
+            <span class="hole"></span>
+        </div>
+    </div>
+
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+:root{
+    --gear:  #a9a9a9;
+    --paper: #ffffff;
+    --S:     240px;
+    --HOLE:  100px;
+
+    --DOT:   72px;
+    --BITE:  25px;
+    --Rdot: calc( (var(--S) / 2) + (var(--DOT) / 2) - var(--BITE) );
+}
+
+
+.stage{
+    max-width: 960px;
+    margin: 0 auto 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    display: grid;
+    place-items: center;
+}
+
+
+.core{
+    width: var(--S); height: var(--S);
+    background: var(--gear);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 10px #00000014;
+}
+
+.bolt{
+    width: var(--DOT);
+    height: var(--DOT);
+    background: var(--paper);
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+
+/* ----- ВЕРСІЯ 2.1: через position ----- */
+.gear-pos{ position:relative; width:calc(var(--S) + var(--DOT)); height:calc(var(--S) + var(--DOT)); display:grid; place-items:center; }
+.gear-pos .core{ position:relative; }
+.gear-pos .bolt{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); }
+
+.gear-pos .b1{ transform: translate(-50%, calc(-1*var(--Rdot) - 50%)); }
+.gear-pos .b2{ transform: translate(calc(-50% + 0.707*var(--Rdot)), calc(-50% - 0.707*var(--Rdot))); }
+.gear-pos .b3{ transform: translate(calc(-50% + var(--Rdot)), -50%); }
+.gear-pos .b4{ transform: translate(calc(-50% + 0.707*var(--Rdot)), calc(-50% + 0.707*var(--Rdot))); }
+.gear-pos .b5{ transform: translate(-50%, calc(-50% + var(--Rdot))); }
+.gear-pos .b6{ transform: translate(calc(-50% - 0.707*var(--Rdot)), calc(-50% + 0.707*var(--Rdot))); }
+.gear-pos .b7{ transform: translate(calc(-50% - var(--Rdot)), -50%); }
+.gear-pos .b8{ transform: translate(calc(-50% - 0.707*var(--Rdot)), calc(-50% - 0.707*var(--Rdot))); }
+
+/* ----- ВЕРСІЯ 2.2: через transform ----- */
+.gear-trf{ width:calc(var(--S) + var(--DOT)); height:calc(var(--S) + var(--DOT)); display:grid; place-items:center; position:relative; }
+.gear-trf .core{ grid-area:1/1; }
+.gear-trf .bolt, .gear-trf .hole{ grid-area:1/1; }
+
+.gear-trf .b1{ transform: rotate(  0deg) translateY(calc(-1*var(--Rdot))) rotate(  0deg); }
+.gear-trf .b2{ transform: rotate( 45deg) translateY(calc(-1*var(--Rdot))) rotate(-45deg); }
+.gear-trf .b3{ transform: rotate( 90deg) translateY(calc(-1*var(--Rdot))) rotate(-90deg); }
+.gear-trf .b4{ transform: rotate(135deg) translateY(calc(-1*var(--Rdot))) rotate(-135deg); }
+.gear-trf .b5{ transform: rotate(180deg) translateY(calc(-1*var(--Rdot))) rotate(-180deg); }
+.gear-trf .b6{ transform: rotate(225deg) translateY(calc(-1*var(--Rdot))) rotate(-225deg); }
+.gear-trf .b7{ transform: rotate(270deg) translateY(calc(-1*var(--Rdot))) rotate(-270deg); }
+.gear-trf .b8{ transform: rotate(315deg) translateY(calc(-1*var(--Rdot))) rotate(-315deg); }
+
+.hole{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:var(--HOLE); height:var(--HOLE); background:var(--paper); border-radius:50%; box-shadow:none;
+}
